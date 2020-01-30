@@ -1,0 +1,55 @@
+<div class="mat-dialog-conten">
+
+    <mat-card-title>
+        Seleccione El paciente
+    </mat-card-title>
+
+    <div class="pacientes">
+        <mat-card class="mat-card">
+            <div class="formulario">
+                <form class="creacion usuarios">
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+
+                            <td>
+                                <mat-form-field>
+                                    <input matInput placeholder="Cod_Cita"
+                                     type="text" name="Cod_Cita" [(ngModel)]= 'idcita' >
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                    <input type="tex" matInput [matAutocomplete]="auto" placeholder="Paciente" />
+                                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                        <mat-option *ngFor="let option of datos" [value]="option">
+                                            {{option.identificacion_pac}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+                            </td>
+                             </tr>
+                    </table>
+
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <input  type="number" matInput placeholder="ingreso" name="Ingreso">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </form>
+
+            </div>
+        </mat-card>
+    </div>
+
+</div>
+
+<div class="mat-dialog-actions">
+    <!-- <button mat-raised-button color="primary" (click)="onClickEnviar()"> enviar</button> -->
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"> Cerrar</button>
+
+</div>

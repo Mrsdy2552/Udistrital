@@ -1,0 +1,79 @@
+import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { mySql } from '../../../Server/database.service'; 
+import {MatDialog } from '@angular/material/dialog';
+import { PacientesComponent } from '../pacientes.component';
+import { CitasMedicasComponent } from '../../citas-medicas/citas-medicas.component';
+
+
+
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
+
+@Component({
+  selector: 'app-lista-pacientes',
+  templateUrl: './lista-pacientes.component.html',
+  styleUrls: ['./lista-pacientes.component.css']
+})
+export class ListaPacientesComponent implements OnInit {
+  paginaActual: number = 1;
+  datos: any = [];
+  displayedColumns: string[] = ['identificacion_pac', 'tipo_identificacion_pac', 'nombre_pac', 'apellido_pac',
+    'municipio_pac', 'direccion_pac', 'fecha_nacimiento_pac'];
+  dataSource;
+
+  constructor(private visorService: mySql,
+    public dialog:MatDialog ) { }
+  ngOnInit() {
+
+    this.iniciar();
+
+  }
+  iniciar() {
+    this.visorService.getpacientes().subscribe(
+      res => {
+        this.datos = res
+        // this.dataSource = this.datos;
+        console.log('los datos son ',this.dataSource);
+      },
+
+      err => console.error('error visor', err)
+    );
+
+  }
+  OpenModal():void{
+    const dialogRef = this.dialog.open(PacientesComponent,{});
+    dialogRef.afterClosed().subscribe(
+      res=>{
+        console.log('modal CERRADO');
+        
+      }
+      );
+    }
+    
+    
+    OpenAgenda():void{
+      const dialogRef = this.dialog.open(CitasMedicasComponent,{});
+      dialogRef.afterClosed().subscribe(
+        res=>{
+          console.log('modal creacion cerrado');
+          
+        }
+      )
+
+  }
+} ///cierre de la clase
+
+
+
+

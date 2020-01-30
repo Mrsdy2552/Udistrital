@@ -1,0 +1,16 @@
+.menu-spacer {
+    flex: 1 1 auto;
+  }
+  
+  /* .example-icon {
+    padding: 0 14px;
+  }
+    .example-spacer {
+    flex: 1 1 auto;
+  } */
+  
+  .router-link-active {
+    background-color: white;
+    color: black;
+    border-radius: 27px;
+  }

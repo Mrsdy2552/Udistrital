@@ -1,0 +1,60 @@
+
+<mat-card> 
+<button mat-raised-button color="primary" (click)="OpenModal()">
+  CREAR PACIENTE
+</button>
+
+
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>LISTADO DE PACIENTES</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table class="table">
+      <thead class="thead-dark" >
+
+        <tr>
+          <th scope="row">#</th>
+          <th>TIPO</th>
+          <th>DOCUMENTO</th>
+          <th>Nombre </th>
+          <th>Municipio</th>
+          <th>Direccion</th>
+          <th>Fecha Nacimiento</th>
+        </tr>
+
+      </thead>
+
+      <tbody *ngFor="let dato of datos | paginate: { itemsPerPage: 20, currentPage: paginaActual   } ; index as i">
+        <tr>
+          <td scope="row">{{i+1}}</td>
+
+          <td> {{dato.tipo_identificacion_pac}}</td>
+
+          <td>{{dato.identificacion_pac}}</td>
+
+          <td>{{dato.nombre_pac}} {{dato.apellido_pac}}</td>
+
+          <td> {{dato.municipio_pac}} </td>
+
+          <td>{{dato.direccion_pac }}</td>
+
+          <td>{{dato.fecha_nacimiento_pac| date:'shortDate' }}</td>
+
+          <!-- <td>
+              <button mat-raised-button color="primary" (click)="OpenAgenda()">Agendar</button>
+          </td> -->
+
+        </tr>
+        <tr>
+
+      </tbody>
+    </table>
+
+    <pagination-controls (pageChange)="paginaActual = $event"> </pagination-controls>
+  </mat-card-content>
+</mat-card>
+
+ 

@@ -1,0 +1,34 @@
+{
+  "name": "node-oracle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -w",
+    "dev": "nodemon src/index.ts --exec ts-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.5",
+    "@types/express": "^4.17.0",
+    "nodemon": "^1.19.2",
+    "promise-mysql": "^3.3.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@types/morgan": "^1.7.35",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "oracledb": "^3.1.2",
+    "promise-mysql": "^3.3.1",
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.0",
+    "@types/mysql": "^2.15.5"
+  }
+}

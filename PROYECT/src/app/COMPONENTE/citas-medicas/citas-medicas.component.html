@@ -1,0 +1,60 @@
+<mat-card>
+    <button mat-raised-button color="primary" >
+        CREAR CITA
+    </button>
+
+
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>LISTADO DE CITAS</mat-card-title>
+    </mat-card-header>
+    <div layout-fill layout="column" layout-align="center none">
+        <div layout="row" layout-align="center none">
+            <mat-card-content>
+                <table class="table ">
+                    <thead class="thead-dark">
+
+                        <tr>
+                            <!-- <th scope="row">#</th> -->
+                            <th>N°</th>
+                            <th>Fecha Cita</th>
+                            <th>Hora Cita</th>
+                            <th>Lugar</th>
+                            <th>Asignar </th>
+                            <th> </th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody
+                        *ngFor="let dato of datos ">
+                        <tr>
+                            <!-- <td scope="row">{{i+1}}</td> -->
+
+                            <td> {{dato.id_cita}}</td>
+
+                            <td>{{dato.fecha_cita | date:'shortDate'}}</td>
+
+                            <td>{{dato.hora_cita}}</td>
+
+                            <td> {{dato.lugar_cita}} </td>
+                            <td>
+                                <button mat-raised-button color="primary" 
+                                 (click)="OpenModalpaciente(dato.id_cita)">paciente</button>
+                                <button mat-raised-button color="primary"  >Medico</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                        </tbody>
+                    </table>
+                 
+
+                <pagination-controls > </pagination-controls>
+            </mat-card-content>
+        </div>
+    </div>
+
+</mat-card>

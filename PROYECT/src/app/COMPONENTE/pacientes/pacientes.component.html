@@ -1,0 +1,92 @@
+<div class="mat-dialog-conten">
+
+  <mat-card-title>
+    Paciente Nuevo
+  </mat-card-title>
+
+  <div class="pacientes">
+
+
+    <mat-card class="mat-card">
+      <div class="formulario">
+        <form class="creacion usuarios">
+
+
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Nombre" name="nombre_pac" [(ngModel)]="paciente.nombre_pac">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Apellido" name="apellido_pac" [(ngModel)]="paciente.apellido_pac">
+                </mat-form-field>
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <mat-label>Tipo Documentod</mat-label>
+                  <mat-select name="tipo_identificacion_pac" 
+                  [(ngModel)]="paciente.tipo_identificacion_pac">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Documento" type="number" name="identificacion_pac"
+                    [(ngModel)]="paciente.identificacion_pac">
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Municipio" name="municipio_pac" [(ngModel)]="paciente.municipio_pac">
+                </mat-form-field>
+              </td>
+
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Direcciòn" name="direccion_pac" [(ngModel)]="paciente.direccion_pac">
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+
+              <td>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Fecha Nacimiento" name="fecha_nacimiento_pac"
+                    [(ngModel)]="paciente.fecha_nacimiento_pac">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+              </td>
+            </tr>
+          </table>
+        </form>
+
+
+
+      </div>
+    </mat-card>
+  </div>
+
+</div>
+
+<div class="mat-dialog-actions">
+  <button mat-raised-button color="primary" (click)="onClickEnviar()"> enviar</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true"> Cerrar</button>
+
+</div>
