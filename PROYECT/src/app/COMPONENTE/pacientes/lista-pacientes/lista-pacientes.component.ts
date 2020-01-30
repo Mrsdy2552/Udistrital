@@ -26,6 +26,9 @@ export interface pacientesElement {
   styleUrls: ['./lista-pacientes.component.css']
 })
 export class ListaPacientesComponent implements OnInit {
+
+  repetidor : any;
+
   constructor(private visorService: mySql, public dialog: MatDialog) { }
 
   displayedColumns = ['identificacion_pac', 'tipo_identificacion_pac', 'nombre_pac', 'apellido_pac',
@@ -36,14 +39,18 @@ export class ListaPacientesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.iniciar();
+    
+    this.repetidor = setInterval(() => {
+      this.iniciar(); 
+    }, 1000);
   }
+
   iniciar() {
     this.visorService.getpacientes().subscribe(
       res => {
         this.dataSource = new MatTableDataSource();
         this.dataSource.data = res;
-        console.log(this.dataSource.data);
+        // console.log(this.dataSource.data);
         this.dataSource.paginator = this.paginator;
       },
       err => console.error('error visor', err)

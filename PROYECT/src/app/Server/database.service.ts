@@ -16,7 +16,7 @@ export class mySql {
 
   ///pacientes/////////////
   getpacientes() {
-    console.log('Funciona Tablero');
+    // console.log('Funciona Tablero');
     return this.http.get(`${this.API_URI}/paciente`);
   }
   deletepaciente(identificacion_pac: string) {
