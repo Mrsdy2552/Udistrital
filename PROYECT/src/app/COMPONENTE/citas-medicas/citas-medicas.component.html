@@ -22,7 +22,8 @@
                             <th>Fecha Cita</th>
                             <th>Hora Cita</th>
                             <th>Lugar</th>
-                            <th>Asignar </th>
+                            <th>comentario </th>
+                            <th>Agendar </th>
                             <th> </th>
                         </tr>
 
@@ -40,6 +41,7 @@
                             <td>{{dato.hora_cita}}</td>
 
                             <td> {{dato.lugar_cita}} </td>
+                            <td> {{dato.comentario}} </td>
                             <td>
                                 <button mat-raised-button color="primary" 
                                  (click)="OpenModalpaciente(dato.id_cita)">Agendar</button>

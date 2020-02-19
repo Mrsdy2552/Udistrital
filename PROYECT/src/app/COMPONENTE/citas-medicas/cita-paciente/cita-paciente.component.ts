@@ -2,6 +2,8 @@ import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { mySql } from '../../../Server/database.service';
 import { HttpClientModule} from "@angular/common/http";
+import { Observable } from 'rxjs';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-cita-paciente',
@@ -11,12 +13,12 @@ import { HttpClientModule} from "@angular/common/http";
 })
 export class CitaPacienteComponent implements OnInit {
 
- 
+  myControl = new FormControl();
   
   paciente: any = [];
   medico: any = [];
   // cita: string;
-  options: string[] = ['One', 'Two', 'Three'];
+  // options: string[] = ['One', 'Two', 'Three'];
 
   constructor(
 
@@ -25,15 +27,19 @@ export class CitaPacienteComponent implements OnInit {
     private mySql: mySql,
    
      ) { }
-
-
+ 
 
 ngOnInit() {
   this.paciente
   this.medico
   this.pacientes();
   this.medicos();   
+
+ 
 }
+
+ 
+
 
 onclicno() {
   this.dialogRef.close();
@@ -63,7 +69,7 @@ medicos() {
   this.mySql.getmedico().subscribe(
     res => {
       this.medico = res
-        console.log("LA LISTA ES  son:", res);
+        // console.log("LA LISTA ES  son:", res);
     },
 
     err => console.error('error visor', err)

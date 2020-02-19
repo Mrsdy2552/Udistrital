@@ -19,7 +19,8 @@
                             </td>
                             <td>
                                 <mat-form-field>
-                                    <input type="tex" matInput [matAutocomplete]="auto" placeholder="Paciente" />
+                                    <mat-label>PACIENTE</mat-label>
+                                    <input type="tex" matInput [matAutocomplete]="auto"/>
                                     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
                                         <mat-option *ngFor="let option of paciente" [value]="option">
                                             {{option.identificacion_pac}}
@@ -30,12 +31,13 @@
                             <td>
 
                                 <mat-form-field>
-                                    <input type="tex" matInput [matAutocomplete]="autoneduci" placeholder="MEDICO" />
+                                    <mat-label>MEDICO</mat-label>
+                                    <input type="tex" matInput [matAutocomplete]="autoneduci" />
                                     <mat-autocomplete #autoneduci="matAutocomplete" [displayWith]="displaymedi">
                                         <mat-option *ngFor="let lismedi of medico" [value]="lismedi">
                                             {{lismedi.identificacion_med}}
                                         </mat-option>
-                                    </mat-autocomplete>
+                                       </mat-autocomplete>
                                 </mat-form-field>
 
                             </td>
