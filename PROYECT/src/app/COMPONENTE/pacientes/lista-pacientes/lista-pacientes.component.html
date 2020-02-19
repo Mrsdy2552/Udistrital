@@ -56,7 +56,7 @@
 
       <ng-container matColumnDef="fecha_nacimiento_pac">
         <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Nacimiento </mat-header-cell>
-        <mat-cell mat-cell  *matCellDef="let row"> {{row.fecha_nacimiento_pac}}</mat-cell>
+        <mat-cell *matCellDef="let row" type="date">  {{row.fecha_nacimiento_pac | date}}</mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns" class="encabezado"></mat-header-row>
