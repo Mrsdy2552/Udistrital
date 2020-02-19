@@ -17,11 +17,11 @@ class GameRoutes {
 
     config() {
         // medico
-        this.router.get('/', SaludhoyController.list);
-        this.router.post('/', SaludhoyController.create);
+        this.router.get('/medico/', SaludhoyController.list);
+        this.router.post('/medico/', SaludhoyController.create);
         // this.router.get('/:id', SaludhoyController.getOne);
-        this.router.put('/:id', SaludhoyController.update);
-        this.router.delete('/:identificacion_med', SaludhoyController.delete);
+        this.router.put('/medico/:id', SaludhoyController.update);
+        this.router.delete('/medico/:identificacion_med', SaludhoyController.delete);
 
         ///paciente/////////
 

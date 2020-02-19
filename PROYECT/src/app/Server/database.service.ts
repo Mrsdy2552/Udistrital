@@ -30,6 +30,11 @@ export class mySql {
 
   //////////medicos////////
 
+  getmedico() {
+    // console.log('Funciona Tablero');
+    return this.http.get(`${this.API_URI}/medico`);
+  }
+
   // crearmedico(medico: Seguimiento) {
   //   return this.http.post(`${this.API_URI}/`, segimieto);
   // }

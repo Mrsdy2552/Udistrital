@@ -14,19 +14,32 @@
                             <td>
                                 <mat-form-field>
                                     <input matInput placeholder="Cod_Cita"
-                                     type="text" name="Cod_Cita" [(ngModel)]= 'idcita' >
+                                     type="text" name="Cod_Cita" disabled [(ngModel)]= 'idcita' >
                                 </mat-form-field>
                             </td>
                             <td>
                                 <mat-form-field>
                                     <input type="tex" matInput [matAutocomplete]="auto" placeholder="Paciente" />
                                     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-                                        <mat-option *ngFor="let option of datos" [value]="option">
+                                        <mat-option *ngFor="let option of paciente" [value]="option">
                                             {{option.identificacion_pac}}
                                         </mat-option>
                                     </mat-autocomplete>
                                 </mat-form-field>
                             </td>
+                            <td>
+
+                                <mat-form-field>
+                                    <input type="tex" matInput [matAutocomplete]="autoneduci" placeholder="MEDICO" />
+                                    <mat-autocomplete #autoneduci="matAutocomplete" [displayWith]="displaymedi">
+                                        <mat-option *ngFor="let lismedi of medico" [value]="lismedi">
+                                            {{lismedi.identificacion_med}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+
+                            </td>
+                            
                              </tr>
                     </table>
 

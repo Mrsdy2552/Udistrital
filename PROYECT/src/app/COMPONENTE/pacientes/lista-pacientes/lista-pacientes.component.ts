@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PacientesComponent } from '../pacientes.component';
 import { CitasMedicasComponent } from '../../citas-medicas/citas-medicas.component';
 import { MatPaginatorIntl, MatPaginator } from '@angular/material';
+import { _Bottom } from '@angular/cdk/scrolling';
 
 
 

@@ -13,7 +13,8 @@ export class CitaPacienteComponent implements OnInit {
 
  
   
-  datos: any = [];
+  paciente: any = [];
+  medico: any = [];
   // cita: string;
   options: string[] = ['One', 'Two', 'Three'];
 
@@ -28,12 +29,10 @@ export class CitaPacienteComponent implements OnInit {
 
 
 ngOnInit() {
-  this.pacientes
+  this.paciente
+  this.medico
   this.pacientes();
-  // this.CITAS.Id_cita = this.IdCITA;
-//  console.log('la cita es ', this.idcita);
-//  this.cita = this cita ;
-// this.cita = '255';
+  this.medicos();   
 }
 
 onclicno() {
@@ -44,17 +43,33 @@ displayFn(subject){
   return subject ? subject.identificacion_pac : undefined;
 }
 
+displaymedi(subject){
+  return subject ? subject.identificacion_med : undefined;
+}
+
 
 pacientes() {
   this.mySql.getpacientes().subscribe(
     res => {
-      this.datos = res
+      this.paciente = res
       // console.log("LA LISTA ES  son:", res);
+    },
+    err => console.error('error visor', err)
+  );
+
+}
+
+medicos() {
+  this.mySql.getmedico().subscribe(
+    res => {
+      this.medico = res
+        console.log("LA LISTA ES  son:", res);
     },
 
     err => console.error('error visor', err)
   );
 
 }
+
 
 }
