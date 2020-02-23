@@ -16,9 +16,10 @@ import { PacientesComponent } from './COMPONENTE/pacientes/pacientes.component';
 import { ListaPacientesComponent } from './COMPONENTE/pacientes/lista-pacientes/lista-pacientes.component';
 import { CitasMedicasComponent } from './COMPONENTE/citas-medicas/citas-medicas.component';
 import {CitaPacienteComponent  } from './COMPONENTE/citas-medicas/cita-paciente/cita-paciente.component';
-import {CitasMedicoComponent  } from './COMPONENTE/citas-medicas/citas-medico/citas-medico.component';
+
 import {HistoriaClinicaComponent  } from './COMPONENTE/historia-clinica/historia-clinica.component';
 import { CreacionUsuariosComponent } from './COMPONENTE/creacion-usuarios/creacion-usuarios.component';
+import { CreacionCitasComponent } from './COMPONENTE/citas-medicas/creacion-citas/creacion-citas.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { CreacionUsuariosComponent } from './COMPONENTE/creacion-usuarios/creaci
     ListaPacientesComponent,
     CitasMedicasComponent,
     CitaPacienteComponent,
-    CitasMedicoComponent,
+    
     HistoriaClinicaComponent,
-    CreacionUsuariosComponent
+    CreacionUsuariosComponent,
+    CreacionCitasComponent
   ],
   imports: [
     MaterialModule,

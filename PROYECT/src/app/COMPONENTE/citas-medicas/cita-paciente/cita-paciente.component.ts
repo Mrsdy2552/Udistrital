@@ -33,13 +33,8 @@ ngOnInit() {
   this.paciente
   this.medico
   this.pacientes();
-  this.medicos();   
-
- 
-}
-
- 
-
+  this.medicos();    
+} 
 
 onclicno() {
   this.dialogRef.close();

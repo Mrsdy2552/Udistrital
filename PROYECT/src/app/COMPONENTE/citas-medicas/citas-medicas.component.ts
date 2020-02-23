@@ -2,6 +2,8 @@ import { Component, OnInit, Output, Host } from '@angular/core';
 import { mySql } from '../../Server/database.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CitaPacienteComponent } from './cita-paciente/cita-paciente.component';
+import { CreacionCitasComponent } from './creacion-citas/creacion-citas.component';
+
 
 export interface DialogData {
   Id_cita: string;
@@ -46,17 +48,22 @@ export class CitasMedicasComponent implements OnInit {
     
     const dialogRef = this.dialog.open(CitaPacienteComponent, {
       data: this.Id_cita 
-
     });
     
     dialogRef.afterClosed().subscribe(
       res => {
         // console.log('modal pacientes CERRADO');
-
       }
     );
   }
 
-
-
+ openModalCitas(){
+  const dialogRef = this.dialog.open(CreacionCitasComponent, {});
+  
+  dialogRef.afterClosed().subscribe(
+    res => {
+       console.log('modal pacientes CERRADO');
+    }
+  );
+}
 }

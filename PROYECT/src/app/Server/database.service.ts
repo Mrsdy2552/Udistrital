@@ -1,6 +1,7 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient, HttpParams, HttpHandler } from '@angular/common/http';
 import { pacientes } from '../MODELS/pecientes.model';
+import {  Citas } from '../MODELS/citas.model';
 
 
 
@@ -53,6 +54,10 @@ export class mySql {
   getcitas() {
     console.log('Funciona Tablero');
     return this.http.get(`${this.API_URI}/cita/`);
+  }
+
+  savecitas(citas:Citas) {
+    return this.http.post(`${this.API_URI}/cita/`, citas);
   }
  
 

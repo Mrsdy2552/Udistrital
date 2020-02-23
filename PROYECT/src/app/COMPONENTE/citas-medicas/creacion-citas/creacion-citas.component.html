@@ -1,0 +1,47 @@
+<div class="mat-dialog-conten">
+
+    <mat-card-title>
+      Nueva Cita
+    </mat-card-title>
+    <mat-card class="mat-card">
+
+<form class="example-form">
+    
+    <table class="example-full-width" cellspacing="0">
+        <tr> 
+
+      <td>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Fecha de la Cita" name="fecha_cita"
+             [(ngModel)]="newcitas.fecha_cita"> 
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+    
+    </td>
+      <td>
+          <mat-form-field class="example-full-width">
+        <mat-label>HORA  DE LA CITA</mat-label>
+        <input type="time"  matInput [(ngModel)]="newcitas.hora_cita" name="hora_cita"> 
+      </mat-form-field>
+    </td>  
+</tr>
+</table>      
+            <mat-form-field class="example-full-width">
+                <mat-label>Lugar Cita</mat-label>
+                <input matInput placeholder="Lugar De la cita "  [(ngModel)]="newcitas.lugar_cita" name="lugar_cita">
+              </mat-form-field> 
+               
+  <mat-form-field class="example-full-width">
+    <mat-label>Comentario</mat-label>
+    <textarea matInput placeholder="Por favor escriba comentario "  [(ngModel)]="newcitas.comentario"  name="comentario"></textarea>
+  </mat-form-field> 
+
+</form>
+</mat-card>
+ <div class="mat-dialog-actions">
+  <button mat-raised-button color="primary" (click)="onclickNewCita()"> enviar</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true"> Cerrar</button>
+
+</div>
+  </div>

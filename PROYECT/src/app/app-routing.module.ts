@@ -7,6 +7,8 @@ import { HistoriaClinicaComponent} from './COMPONENTE/historia-clinica/historia-
 import { CreacionUsuariosComponent } from './COMPONENTE/creacion-usuarios/creacion-usuarios.component';
 import { CitasMedicasComponent} from './COMPONENTE/citas-medicas/citas-medicas.component';
 import { CitaPacienteComponent} from './COMPONENTE/citas-medicas/cita-paciente/cita-paciente.component';
+import { CreacionCitasComponent } from './COMPONENTE/citas-medicas/creacion-citas/creacion-citas.component';
+
 
 
 const routes: Routes = [
@@ -17,6 +19,7 @@ const routes: Routes = [
 { path: 'creacion', component: CreacionUsuariosComponent },
 { path: 'citas', component: CitasMedicasComponent },
 { path: 'citas-paciente', component: CitaPacienteComponent },
+{ path: 'creacion-citas', component: CreacionCitasComponent },
 
 ];
 
