@@ -6,7 +6,7 @@ import pool from '../database';
 class citacontroller {
 
     public async list(req: Request, res: Response): Promise<void> {
-        const games = await pool.query('SELECT * FROM cita');
+        const games = await pool.query('SELECT * FROM `cita` ORDER BY `id_cita` DESC');
         res.json(games);
     }
 

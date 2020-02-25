@@ -2,7 +2,7 @@ import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { mySql } from '../../../Server/database.service';
 import { Citas } from "../../../MODELS/citas.model";
-import { DateAdapter } from '@angular/material';
+ import {CitasMedicasComponent  } from "../citas-medicas.component";
 import Swal from 'sweetalert2';
 
 @Component({
@@ -42,7 +42,7 @@ export class CreacionCitasComponent implements OnInit {
         icon: 'info'
       })
 
-      console.log("Enviado", res);
+      // console.log("Enviado", res);
 
     },
 
@@ -58,7 +58,9 @@ export class CreacionCitasComponent implements OnInit {
   )
 
 
-  this.dialogRef.close();
+  this.dialogRef.close( );
+  
+ 
 }
 
 }

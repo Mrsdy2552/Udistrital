@@ -63,6 +63,7 @@ export class CitasMedicasComponent implements OnInit {
   dialogRef.afterClosed().subscribe(
     res => {
        console.log('modal pacientes CERRADO');
+       this.iniciar();
     }
   );
 }

@@ -40,10 +40,10 @@ export class ListaPacientesComponent implements OnInit {
 
   ngOnInit() {
 
-    
-    this.repetidor = setInterval(() => {
-      this.iniciar(); 
-    }, 1000);
+    this.iniciar(); 
+    // this.repetidor = setInterval(() => {
+     
+    // }, 1000);
   }
 
   iniciar() {
@@ -64,21 +64,11 @@ export class ListaPacientesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       res => {
         console.log('modal CERRADO');
+        this.iniciar();
 
       }
     );
-  }
-
-
-  OpenAgenda(): void {
-    const dialogRef = this.dialog.open(CitasMedicasComponent, {});
-    dialogRef.afterClosed().subscribe(
-      res => {
-        console.log('modal creacion cerrado');
-      }
-    )
-
-  }
+  }  
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
