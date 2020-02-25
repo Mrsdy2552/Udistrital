@@ -4,6 +4,7 @@ import SaludhoyController from '../controllers/medico';
 import pacientecontroller from '../controllers/paciente';
 import medico_cita from '../controllers/medico_cita';
 import citacontroller from '../controllers/cita';
+import paciente_citacontroller  from '../controllers/paciente_cita';
 
 import telpacientecontroller from '../controllers/tel-paciente';
 
@@ -49,7 +50,14 @@ class GameRoutes {
          this.router.put('/cita_medico/:id', medico_cita.update);
          this.router.delete('/cita_medico/:identificacion_med', medico_cita.delete);
 
-        
+        ///paciente_cita
+        this.router.get('/cita_paciente/', paciente_citacontroller.list);
+        this.router.post('/cita_paciente/', paciente_citacontroller.create);
+        this.router.put('/cita_paciente/:cod_cita', paciente_citacontroller.update);
+        this.router.delete('/cita_paciente/:cod_cita', paciente_citacontroller.delete);
+
+
+
 
     }
 

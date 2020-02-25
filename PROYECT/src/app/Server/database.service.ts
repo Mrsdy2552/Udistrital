@@ -1,6 +1,8 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient, HttpParams, HttpHandler } from '@angular/common/http';
 import { pacientes } from '../MODELS/pecientes.model';
+import { cita_pacientes } from '../MODELS/pecientes.model';
+import {  cita_medico } from '../MODELS/medicos.model';
 import {  Citas } from '../MODELS/citas.model';
 
 
@@ -36,9 +38,9 @@ export class mySql {
     return this.http.get(`${this.API_URI}/medico`);
   }
 
-  // crearmedico(medico: Seguimiento) {
-  //   return this.http.post(`${this.API_URI}/`, segimieto);
-  // }
+  salveMedicoCita(cita_medico: cita_medico) {
+    return this.http.post(`${this.API_URI}/cita_medico/`, cita_medico);
+  }
  
   // getmedico(movSumi: string, entraMedi: string) {
   //   return this.http.get(`${this.API_URI}/comentario/${movSumi},${entraMedi}`)
@@ -58,6 +60,11 @@ export class mySql {
 
   savecitas(citas:Citas) {
     return this.http.post(`${this.API_URI}/cita/`, citas);
+  }
+ 
+
+  savecitas_paciente(cita_pacientes:cita_pacientes) {
+    return this.http.post(`${this.API_URI}/cita_paciente/`, cita_pacientes);
   }
  
 

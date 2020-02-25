@@ -4,6 +4,9 @@ import { mySql } from '../../../Server/database.service';
 import { HttpClientModule} from "@angular/common/http";
 import { Observable } from 'rxjs';
 import {FormControl} from '@angular/forms';
+import { cita_pacientes} from '../../../MODELS/pecientes.model';
+import { cita_medico} from '../../../MODELS/medicos.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cita-paciente',
@@ -12,6 +15,17 @@ import {FormControl} from '@angular/forms';
    
 })
 export class CitaPacienteComponent implements OnInit {
+
+  newPacienteCita: cita_pacientes = {
+    ingreso: 0,
+    cod_paciente: 0,
+    cod_cita: 0
+      };
+      newMedicoCita: cita_medico = {
+        cod_medico: 0,
+        cod_cita:0
+      };
+
 
   myControl = new FormControl();
   
@@ -72,5 +86,42 @@ medicos() {
 
 }
 
+agendarCita(){
+ console.log('boton funciona');
+ 
 
+  this.mySql.salveMedicoCita(this.newMedicoCita).subscribe(
+    res => {
+      console.log('cita guardada');
+      
+    },err =>{
+      console.error("error", err)
+      
+    }
+
+  );
+
+//   this.mySql.savecitas_paciente(this.newPacienteCita).subscribe(
+//     res => {
+
+//       Swal.fire({
+//         title: 'Guardado',
+//         icon: 'info'
+//       })
+
+//       // console.log("Enviado", res);
+
+//     },
+
+//     err => {
+//       Swal.fire({
+//         title: 'ERROR',
+//         icon: 'error'
+//       })
+//       console.error("error", err)
+//     }
+//   );
+
+
+}
 }

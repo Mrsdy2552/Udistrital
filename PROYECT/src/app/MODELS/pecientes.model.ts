@@ -7,3 +7,9 @@ export interface pacientes{
         direccion_pac?: string;
         fecha_nacimiento_pac: Date;
 }
+export interface cita_pacientes{
+    ingreso: number;
+cod_paciente: number;
+cod_cita: number;
+
+}
