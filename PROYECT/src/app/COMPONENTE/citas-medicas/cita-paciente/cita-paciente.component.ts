@@ -7,6 +7,7 @@ import {FormControl} from '@angular/forms';
 import { cita_pacientes} from '../../../MODELS/pecientes.model';
 import { cita_medico} from '../../../MODELS/medicos.model';
 import Swal from 'sweetalert2';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cita-paciente',
@@ -19,18 +20,20 @@ export class CitaPacienteComponent implements OnInit {
   newPacienteCita: cita_pacientes = {
     ingreso: 0,
     cod_paciente: 0,
-    cod_cita: 0
+    cod_cita:   this.idcita
       };
+
       newMedicoCita: cita_medico = {
-        cod_medico: 0,
-        cod_cita:0
+        cod_medico: null,
+        cod_cita: this.idcita
       };
 
-
+lado = 0;
   myControl = new FormControl();
   
   paciente: any = [];
   medico: any = [];
+  identificacion: number;
   // cita: string;
   // options: string[] = ['One', 'Two', 'Three'];
 
@@ -50,15 +53,24 @@ ngOnInit() {
   this.medicos();    
 } 
 
+
 onclicno() {
   this.dialogRef.close();
 }
 
+// functionName(value){
+//   this.newMedicoCita.cod_medico = value;
+//   console.log(value);
+  
+// }
+
 displayFn(subject){
   return subject ? subject.identificacion_pac : undefined;
+
 }
 
 displaymedi(subject){
+   
   return subject ? subject.identificacion_med : undefined;
 }
 
@@ -77,8 +89,9 @@ pacientes() {
 medicos() {
   this.mySql.getmedico().subscribe(
     res => {
-      this.medico = res
-        // console.log("LA LISTA ES  son:", res);
+      this.medico = res  
+      // this.identificacion = res.cod_medico.identificacion_med
+        console.log("LA LISTA ES  son:", this.medico);
     },
 
     err => console.error('error visor', err)
@@ -87,19 +100,23 @@ medicos() {
 }
 
 agendarCita(){
- console.log('boton funciona');
+  console.log('el data ',this.identificacion);
+  
+
  
 
-  this.mySql.salveMedicoCita(this.newMedicoCita).subscribe(
-    res => {
-      console.log('cita guardada');
-      
-    },err =>{
-      console.error("error", err)
-      
-    }
 
-  );
+  // this.mySql.salveMedicoCita(this.newMedicoCita).subscribe(
+  //   res => {
+  //     console.log('boton funciona');
+  //     console.log('cita guardada');
+      
+  //   },err =>{
+  //     console.error("error", err)
+      
+  //   }
+
+  // );
 
 //   this.mySql.savecitas_paciente(this.newPacienteCita).subscribe(
 //     res => {

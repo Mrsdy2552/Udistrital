@@ -39,7 +39,7 @@ export class mySql {
   }
 
   salveMedicoCita(cita_medico: cita_medico) {
-    return this.http.post(`${this.API_URI}/cita_medico/`, cita_medico);
+    return this.http.post(`${this.API_URI}/cita_medico`, cita_medico);
   }
  
   // getmedico(movSumi: string, entraMedi: string) {
@@ -55,16 +55,16 @@ export class mySql {
   //////////citas
   getcitas() {
     console.log('Funciona Tablero');
-    return this.http.get(`${this.API_URI}/cita/`);
+    return this.http.get(`${this.API_URI}/cita`);
   }
 
   savecitas(citas:Citas) {
-    return this.http.post(`${this.API_URI}/cita/`, citas);
+    return this.http.post(`${this.API_URI}/cita`, citas);
   }
  
 
   savecitas_paciente(cita_pacientes:cita_pacientes) {
-    return this.http.post(`${this.API_URI}/cita_paciente/`, cita_pacientes);
+    return this.http.post(`${this.API_URI}/cita_paciente`, cita_pacientes);
   }
  
 

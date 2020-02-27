@@ -14,16 +14,16 @@
                             <td>
                                 <mat-form-field>
                                     <input matInput placeholder="Cod_Cita"
-                                     type="text" name="Cod_Cita" disabled [(ngModel)]= 'idcita'  [(ngModel)]="newPacienteCita.cod_cita"  
-                                     [(ngModel)]="newMedicoCita.cod_cita" >
+                                     type="text" name="Cod_Cita"  
+                                    [(ngModel)]= 'idcita' disabled>
                                 </mat-form-field>
                             </td>
                             <td>
                                 <mat-form-field>
                                     <mat-label>PACIENTE</mat-label>
-                                    <input type="tex" matInput [matAutocomplete]="auto" name="PACIENTE" [(ngModel)]="newPacienteCita.cod_paciente"/>
+                                    <input type="tex" matInput [matAutocomplete]="auto"  [(ngModel)]="newPacienteCita.cod_paciente" name =  "cod_paciente" />
                                     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-                                        <mat-option *ngFor="let option of paciente" [value]="option">
+                                        <mat-option *ngFor="let option of paciente"  [value]="option">
                                             {{option.identificacion_pac}}
                                         </mat-option>
                                     </mat-autocomplete>
@@ -33,9 +33,9 @@
 
                                 <mat-form-field>
                                     <mat-label>MEDICO</mat-label>
-                                    <input type="tex" matInput [matAutocomplete]="autoneduci" name="MEDICO" [(ngModel)]="newMedicoCita.cod_medico" />
+                                    <input type="tex" matInput [matAutocomplete]="autoneduci"   [(ngModel)]="newMedicoCita.cod_medico" name =  "cod_medico"  />
                                     <mat-autocomplete #autoneduci="matAutocomplete" [displayWith]="displaymedi">
-                                        <mat-option *ngFor="let lismedi of medico" [value]="lismedi">
+                                        <mat-option *ngFor="let lismedi of medico"  [value]="lismedi"    >
                                             {{lismedi.identificacion_med}}
                                         </mat-option>
                                        </mat-autocomplete>
@@ -50,7 +50,8 @@
                         <tr>
                             <td>
                                 <mat-form-field class="example-full-width">
-                                    <input  type="number" matInput placeholder="ingreso" name="Ingreso" [(ngModel)]="newPacienteCita.ingreso" >
+                                    <input  type="number" matInput placeholder="ingreso"
+                                     name="Ingreso" [(ngModel)]="newPacienteCita.ingreso" >
                                 </mat-form-field>
                             </td>
                         </tr>
