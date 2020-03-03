@@ -33,7 +33,7 @@
 
                                 <mat-form-field>
                                     <mat-label>MEDICO</mat-label>
-                                    <input type="tex" matInput [matAutocomplete]="autoneduci"   [(ngModel)]="newMedicoCita.cod_medico" name =  "cod_medico"  />
+                                    <input type="tex" matInput [matAutocomplete]="autoneduci"   [(ngModel)]="identificacion" name =  "cod_medico"  />
                                     <mat-autocomplete #autoneduci="matAutocomplete" [displayWith]="displaymedi">
                                         <mat-option *ngFor="let lismedi of medico"  [value]="lismedi"    >
                                             {{lismedi.identificacion_med}}

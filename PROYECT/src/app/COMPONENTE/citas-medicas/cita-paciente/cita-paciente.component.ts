@@ -33,7 +33,8 @@ lado = 0;
   
   paciente: any = [];
   medico: any = [];
-  identificacion: number;
+  identificacion: any = [];
+  i:Number;
   // cita: string;
   // options: string[] = ['One', 'Two', 'Three'];
 
@@ -91,7 +92,12 @@ medicos() {
     res => {
       this.medico = res  
       // this.identificacion = res.cod_medico.identificacion_med
-        console.log("LA LISTA ES  son:", this.medico);
+      console.log("LA LISTA ES  son:", this.medico);
+  
+
+        
+        
+
     },
 
     err => console.error('error visor', err)
@@ -100,9 +106,17 @@ medicos() {
 }
 
 agendarCita(){
-  console.log('el data ',this.identificacion);
-  
+  const{ identificacion_med,
+    tipo_identificacion_med,
+    nombre_med,
+    apellido_med,
+    municipio_med,
+    dirección_med,
+    especialidad,} = this.medico;
 
+    console.log('el data ',identificacion_med);
+  
+ 
  
 
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { LoginComponent } from './COMPONENTE/login/login.component';
 import { PacientesComponent } from './COMPONENTE/pacientes/pacientes.component';
 import {ListaPacientesComponent  } from './COMPONENTE/pacientes/lista-pacientes/lista-pacientes.component';
 import { HistoriaClinicaComponent} from './COMPONENTE/historia-clinica/historia-clinica.component';
@@ -12,7 +13,8 @@ import { CreacionCitasComponent } from './COMPONENTE/citas-medicas/creacion-cita
 
 
 const routes: Routes = [
-{ path:'', redirectTo: '/', pathMatch: 'full' },
+{ path:'', redirectTo: 'login', pathMatch: 'full' },
+{ path: 'login', component: LoginComponent },
 { path: 'pacientes', component: PacientesComponent },
 { path: 'ingreso', component: ListaPacientesComponent },
 { path: 'historia', component: HistoriaClinicaComponent },

@@ -4,6 +4,8 @@ import { pacientes } from '../MODELS/pecientes.model';
 import { cita_pacientes } from '../MODELS/pecientes.model';
 import {  cita_medico } from '../MODELS/medicos.model';
 import {  Citas } from '../MODELS/citas.model';
+import {  user } from '../MODELS/User.model';
+
 
 
 
@@ -16,6 +18,14 @@ export class mySql {
   API_URI = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
+
+/////login 
+LoginByUser (User:user){
+  const{user,password} = User;
+
+
+}
+
 
   ///pacientes/////////////
   getpacientes() {

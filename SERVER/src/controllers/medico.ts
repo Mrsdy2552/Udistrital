@@ -6,7 +6,7 @@ import pool from '../database';
 class SaludhoyController {
 
     public async list(req: Request, res: Response): Promise<void> {
-        const games = await pool.query('SELECT * FROM medico');
+        const games = await pool.query('SELECT identificacion_med FROM medico');
         res.json(games);
     }
 

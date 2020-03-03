@@ -20,6 +20,7 @@ import {CitaPacienteComponent  } from './COMPONENTE/citas-medicas/cita-paciente/
 import {HistoriaClinicaComponent  } from './COMPONENTE/historia-clinica/historia-clinica.component';
 import { CreacionUsuariosComponent } from './COMPONENTE/creacion-usuarios/creacion-usuarios.component';
 import { CreacionCitasComponent } from './COMPONENTE/citas-medicas/creacion-citas/creacion-citas.component';
+import { LoginComponent } from './COMPONENTE/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CreacionCitasComponent } from './COMPONENTE/citas-medicas/creacion-cita
     
     HistoriaClinicaComponent,
     CreacionUsuariosComponent,
-    CreacionCitasComponent
+    CreacionCitasComponent,
+    LoginComponent
   ],
   imports: [
     MaterialModule,
