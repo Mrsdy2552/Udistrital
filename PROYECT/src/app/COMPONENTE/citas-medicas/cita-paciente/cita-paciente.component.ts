@@ -112,7 +112,10 @@ agendarCita(){
     apellido_med,
     municipio_med,
     dirección_med,
-    especialidad,} = this.medico;
+    especialidad,} = this.identificacion;
+
+console.log('user',this.identificacion);
+
 
     console.log('el data ',identificacion_med);
   

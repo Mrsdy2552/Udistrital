@@ -20,6 +20,21 @@
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
+      <ng-container>
+        <th>
+          <button>
+            <label for="even">evento</label>
+          </button>
+          
+        </th>
+        <td>
+          <button> enviar  </button>
+        </td>
+
+
+      </ng-container>
+      
+
       <ng-container matColumnDef="tipo_identificacion_pac">
         <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header> TIPO </mat-header-cell>
         <mat-cell mat-cell *matCellDef="let row"> {{row.tipo_identificacion_pac}}</mat-cell>
