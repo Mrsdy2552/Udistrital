@@ -19,22 +19,18 @@ export class CitaPacienteComponent implements OnInit {
 
   newPacienteCita: cita_pacientes = {
     ingreso: 0,
-    cod_paciente: 0,
+    cod_paciente: null,
     cod_cita:   this.idcita
-      };
+   };
 
-      newMedicoCita: cita_medico = {
-        cod_medico: null,
-        cod_cita: this.idcita
+  newMedicoCita: cita_medico = {
+   cod_medico: null,
+   cod_cita: this.idcita
       };
 
 lado = 0;
   myControl = new FormControl();
   
-  paciente: any = [];
-  medico: any = [];
-  identificacion: any = [];
-  i:Number;
   // cita: string;
   // options: string[] = ['One', 'Two', 'Three'];
 
@@ -48,22 +44,16 @@ lado = 0;
  
 
 ngOnInit() {
-  this.paciente
-  this.medico
-  this.pacientes();
-  this.medicos();    
+  // this.paciente
+  // this.medico
+  // this.pacientes();
+  // this.medicos();    
 } 
 
 
 onclicno() {
   this.dialogRef.close();
-}
-
-// functionName(value){
-//   this.newMedicoCita.cod_medico = value;
-//   console.log(value);
-  
-// }
+} 
 
 displayFn(subject){
   return subject ? subject.identificacion_pac : undefined;
@@ -76,48 +66,37 @@ displaymedi(subject){
 }
 
 
-pacientes() {
-  this.mySql.getpacientes().subscribe(
-    res => {
-      this.paciente = res
-      // console.log("LA LISTA ES  son:", res);
-    },
-    err => console.error('error visor', err)
-  );
+// pacientes() {
+//   this.mySql.getpacientes().subscribe(
+//     res => {
+//       this.paciente = res
+//       // console.log("LA LISTA ES  son:", res);
+//     },
+//     err => console.error('error visor', err)
+//   );
 
-}
+// }
 
-medicos() {
-  this.mySql.getmedico().subscribe(
-    res => {
-      this.medico = res  
-      // this.identificacion = res.cod_medico.identificacion_med
-      console.log("LA LISTA ES  son:", this.medico);
-  
+// medicos() {
+//   this.mySql.getmedico().subscribe(
+//     res => {
+//       this.medico = res  
+//       // this.identificacion = res.cod_medico.identificacion_med
+//       console.log("LA LISTA ES  son:", this.medico); 
+//     },
 
-        
-        
+//     err => console.error('error visor', err)
+//   );
 
-    },
-
-    err => console.error('error visor', err)
-  );
-
-}
+// }
 
 agendarCita(){
-  const{ identificacion_med,
-    tipo_identificacion_med,
-    nombre_med,
-    apellido_med,
-    municipio_med,
-    dirección_med,
-    especialidad,} = this.identificacion;
+   
 
-console.log('user',this.identificacion);
+console.log('medico',this.newMedicoCita);
 
 
-    console.log('el data ',identificacion_med);
+    console.log('el paciente ',this.newPacienteCita);
   
  
  

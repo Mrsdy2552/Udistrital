@@ -1,7 +1,7 @@
 <div class="mat-dialog-conten">
 
-    <mat-card-title>
-        Seleccione El paciente
+    <mat-card-title col-md-12> 
+     Agende Paciente A medico
     </mat-card-title>
 
     <div class="pacientes">
@@ -10,7 +10,6 @@
                 <form class="creacion usuarios">
                     <table class="example-full-width" cellspacing="0">
                         <tr>
-
                             <td>
                                 <mat-form-field>
                                     <input matInput placeholder="Cod_Cita"
@@ -18,45 +17,54 @@
                                     [(ngModel)]= 'idcita' disabled>
                                 </mat-form-field>
                             </td>
-                            <td>
-                                <mat-form-field>
-                                    <mat-label>PACIENTE</mat-label>
-                                    <input type="tex" matInput [matAutocomplete]="auto"  [(ngModel)]="newPacienteCita.cod_paciente" name =  "cod_paciente" />
-                                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-                                        <mat-option *ngFor="let option of paciente"  [value]="option">
-                                            {{option.identificacion_pac}}
-                                        </mat-option>
-                                    </mat-autocomplete>
-                                </mat-form-field>
-                            </td>
-                            <td>
+                        
+                            
+                            
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input  type="number" matInput placeholder="ingreso"
+                                             name="Ingreso" [(ngModel)]="newPacienteCita.ingreso" >
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                
+                            </table>
 
-                                <mat-form-field>
-                                    <mat-label>MEDICO</mat-label>
-                                    <input type="tex" matInput [matAutocomplete]="autoneduci"   [(ngModel)]="identificacion_med" name =  "cod_medico"  />
+                            <table class="example-full-width" cellspacing="0">
+                                <tr>
+                                   <td>
+                                        <!-- <mat-label>PACIENTE</mat-label> -->
+                                        <mat-form-field class="example-full-width">
+                                            <input  type="number" matInput placeholder="Cedula PACIENTE"
+                                            [(ngModel)]="newPacienteCita.cod_paciente" name="ID_paciente" >
+                                        </mat-form-field>
+                                        <!-- <input type="tex" matInput [matAutocomplete]="auto"  [(ngModel)]="newPacienteCita.cod_paciente" name =  "cod_paciente" />
+                                            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                                <mat-option *ngFor="let option of paciente"  [value]="option">
+                                                    {{option.identificacion_pac}}
+                                                </mat-option>
+                                            </mat-autocomplete> -->
+                                    </td>
+                              
+                                    <td>
+                                    <!-- <mat-label>MEDICO</mat-label> -->
+                                    <mat-form-field class="example-full-width">
+                                        <input  type="number" matInput placeholder="Cedula Medico"
+                                        [(ngModel)]="newMedicoCita.cod_medico" name="id_medico" >
+                                    </mat-form-field>
+                                    <!-- <input type="tex" matInput [matAutocomplete]="autoneduci"   [(ngModel)]="identificacion_med" name =  "cod_medico"  />
                                     <mat-autocomplete #autoneduci="matAutocomplete" [displayWith]="displaymedi">
                                         <mat-option *ngFor="let lismedi of medico"  [value]="lismedi"    >
                                             {{lismedi.identificacion_med}}
-                                        </mat-option>
-                                       </mat-autocomplete>
-                                </mat-form-field>
-
-                            </td>
+                                        </mat-option> -->
+                                       <!-- </mat-autocomplete> -->
+                             
+                                        </td>
                             
-                             </tr>
+                                 </tr>
                     </table>
 
-                    <table class="example-full-width" cellspacing="0">
-                        <tr>
-                            <td>
-                                <mat-form-field class="example-full-width">
-                                    <input  type="number" matInput placeholder="ingreso"
-                                     name="Ingreso" [(ngModel)]="newPacienteCita.ingreso" >
-                                </mat-form-field>
-                            </td>
-                        </tr>
-                        
-                    </table>
+                  
                 </form>
 
             </div>
