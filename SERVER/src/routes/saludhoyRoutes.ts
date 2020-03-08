@@ -46,7 +46,7 @@ class GameRoutes {
          // medico_cita
          this.router.get('/cita_medico/', medico_cita.list);
          this.router.post('/cita_medico/', medico_cita.create);
-         // this.router.get('/cita_medico/:id', medico_cita.getOne);
+         this.router.get('/cita_medico/:id', medico_cita.getOne);
          this.router.put('/cita_medico/:id', medico_cita.update);
          this.router.delete('/cita_medico/:identificacion_med', medico_cita.delete);
 

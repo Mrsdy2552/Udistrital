@@ -91,21 +91,15 @@ displaymedi(subject){
 // }
 
 agendarCita(){
-   
-
 console.log('medico',this.newMedicoCita);
-
-
-    console.log('el paciente ',this.newPacienteCita);
+console.log('el paciente ',this.newPacienteCita);
   
- 
- 
-
 
   // this.mySql.salveMedicoCita(this.newMedicoCita).subscribe(
   //   res => {
   //     console.log('boton funciona');
-  //     console.log('cita guardada');
+  //     console.log('cita guardada medico ');
+
       
   //   },err =>{
   //     console.error("error", err)
@@ -114,26 +108,27 @@ console.log('medico',this.newMedicoCita);
 
   // );
 
-//   this.mySql.savecitas_paciente(this.newPacienteCita).subscribe(
-//     res => {
+  this.mySql.saveCitasPaciente(this.newPacienteCita).subscribe(
+    res => {
 
-//       Swal.fire({
-//         title: 'Guardado',
-//         icon: 'info'
-//       })
+      Swal.fire({
+        title: 'Guardado',
+        icon: 'info'
+      })
 
-//       // console.log("Enviado", res);
+      console.log(this.newPacienteCita);
+      
 
-//     },
+    },
 
-//     err => {
-//       Swal.fire({
-//         title: 'ERROR',
-//         icon: 'error'
-//       })
-//       console.error("error", err)
-//     }
-//   );
+    err => {
+      Swal.fire({
+        title: 'ERROR',
+        icon: 'error'
+      })
+      console.error("error", err)
+    }
+  );
 
 
 }

@@ -10,15 +10,15 @@ class medico_cita {
         res.json(games);
     }
 
-    // public async getOne(req: Request, res: Response): Promise<any> {
-    //     const { id } = req.params;
-    //     const games = await pool.query('SELECT * FROM medico_cita WHERE id = ?', [id]);
-    //     console.log(games.length);
-    //     if (games.length > 0) {
-    //         return res.json(games[0]);
-    //     }
-    //     res.status(404).json({ text: "The game doesn't exits" });
-    // }
+    public async getOne(req: Request, res: Response): Promise<any> {
+        const { id } = req.params;
+        const games = await pool.query('SELECT DATEDIFF(CURDATE(),fecha_cita ) as dias  ,fecha_cita , cita.id_cita,id_especialidad,cod_paciente         FROM cita inner JOIN paciente_cita on id_cita = cod_cita         INNER JOIN medico_cita on id_cita = medico_cita.cod_cita         INNER JOIN medico on medico.identificacion_med = medico_cita.cod_medico        INNER JOIN   especialidad_medica  on medico.especialidad = especialidad_medica.id_especialidad        where cod_paciente = ?        ORDER BY fecha_cita DESC LIMIT 1', [id]);
+        console.log(games.length);
+        if (games.length > 0) {
+            return res.json(games[0]);
+        }
+        res.status(404).json({ text: "The game doesn't exits" });
+    }
 
     public async create(req: Request, res: Response): Promise<void> {
         const result = await pool.query('INSERT INTO medico_cita set ?', [req.body]);

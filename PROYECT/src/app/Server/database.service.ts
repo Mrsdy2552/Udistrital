@@ -48,9 +48,6 @@ LoginByUser (User:user){
     return this.http.get(`${this.API_URI}/medico`);
   }
 
-  salveMedicoCita(cita_medico: cita_medico) {
-    return this.http.post(`${this.API_URI}/cita_medico`, cita_medico);
-  }
  
   // getmedico(movSumi: string, entraMedi: string) {
   //   return this.http.get(`${this.API_URI}/comentario/${movSumi},${entraMedi}`)
@@ -71,9 +68,12 @@ LoginByUser (User:user){
   savecitas(citas:Citas) {
     return this.http.post(`${this.API_URI}/cita`, citas);
   }
- 
 
-  savecitas_paciente(cita_pacientes:cita_pacientes) {
+  salveMedicoCita(cita_medico: cita_medico) {
+    return this.http.post(`${this.API_URI}/cita_medico`, cita_medico);
+  }
+ 
+  saveCitasPaciente(cita_pacientes:cita_pacientes) {
     return this.http.post(`${this.API_URI}/cita_paciente`, cita_pacientes);
   }
  
