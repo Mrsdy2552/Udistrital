@@ -94,6 +94,8 @@ displaymedi(subject){
 // }
 
 consultarCita(){
+  console.log(this.newPacienteCita.cod_paciente);
+  
   this.mySql.consultaCita(this.newPacienteCita.cod_paciente).subscribe(
     res => {
       console.log(res);
@@ -104,7 +106,7 @@ consultarCita(){
       this.dias = dias;
         this.especialidad = especialidad
     
-      if ( dias < 30  ){
+      if ( dias < 30   ){
 
         Swal.fire({
           title: 'la cita no se puede asignar',
@@ -119,6 +121,10 @@ consultarCita(){
     },
     
     err =>{
+      Swal.fire({
+        title: 'es la primera Cita del paciente',
+        icon: 'info'
+      })
       this.agendarCita(); 
       console.error("error", err)
     }
@@ -152,8 +158,8 @@ console.log('el paciente ',this.newPacienteCita);
     res => {
 
       Swal.fire({
-        title: 'Guardado',
-        icon: 'info'
+        title: 'Cita Agendada',
+        icon: 'success'
       })
       console.log(res);
       
