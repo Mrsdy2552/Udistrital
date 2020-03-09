@@ -9,7 +9,7 @@ export interface pacientes{
 }
 export interface cita_pacientes{
     ingreso: number;
-cod_paciente: number;
-cod_cita: number;
+    cod_paciente: number;
+    cod_cita: number;
 
 }

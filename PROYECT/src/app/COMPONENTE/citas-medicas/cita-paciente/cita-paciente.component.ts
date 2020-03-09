@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CitaPacienteComponent implements OnInit {
 
+  citasAsignadas: any =[];
   newPacienteCita: cita_pacientes = {
     ingreso: 0,
     cod_paciente: null,
@@ -30,6 +31,8 @@ export class CitaPacienteComponent implements OnInit {
 
 lado = 0;
   myControl = new FormControl();
+  especialidad: any;
+  dias: any;
   
   // cita: string;
   // options: string[] = ['One', 'Two', 'Three'];
@@ -90,23 +93,60 @@ displaymedi(subject){
 
 // }
 
+consultarCita(){
+  this.mySql.consultaCita(this.newPacienteCita.cod_paciente).subscribe(
+    res => {
+      console.log(res);
+      
+      this.citasAsignadas = res;
+      let dias = this.citasAsignadas.dias;
+      let especialidad = this.citasAsignadas.id_especialidad
+      this.dias = dias;
+        this.especialidad = especialidad
+    
+      if ( dias < 30  ){
+
+        Swal.fire({
+          title: 'la cita no se puede asignar',
+          icon: 'error'
+        })
+        this.dialogRef.close()
+
+      } else{  
+        this.agendarCita(); 
+      }
+      
+    },
+    
+    err =>{
+      this.agendarCita(); 
+      console.error("error", err)
+    }
+    
+    ); 
+
+    }
+
+
+
 agendarCita(){
 console.log('medico',this.newMedicoCita);
 console.log('el paciente ',this.newPacienteCita);
   
 
-  // this.mySql.salveMedicoCita(this.newMedicoCita).subscribe(
-  //   res => {
-  //     console.log('boton funciona');
-  //     console.log('cita guardada medico ');
-
+  this.mySql.salveMedicoCita(this.newMedicoCita).subscribe(
+    res => {
+      console.log('boton funciona');
+      console.log('cita guardada medico ');
+      console.log(res);
       
-  //   },err =>{
-  //     console.error("error", err)
       
-  //   }
+    },err =>{
+      console.error("error", err)
+      
+    }
 
-  // );
+  );
 
   this.mySql.saveCitasPaciente(this.newPacienteCita).subscribe(
     res => {
@@ -115,7 +155,8 @@ console.log('el paciente ',this.newPacienteCita);
         title: 'Guardado',
         icon: 'info'
       })
-
+      console.log(res);
+      
       console.log(this.newPacienteCita);
       
 
@@ -129,7 +170,7 @@ console.log('el paciente ',this.newPacienteCita);
       console.error("error", err)
     }
   );
-
+this.dialogRef.close()
 
 }
 }

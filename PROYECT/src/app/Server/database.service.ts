@@ -68,6 +68,10 @@ LoginByUser (User:user){
   savecitas(citas:Citas) {
     return this.http.post(`${this.API_URI}/cita`, citas);
   }
+  consultaCita(id:number){
+    return this.http.get(`${this.API_URI}/cita_medico/${id}`);
+      }
+
 
   salveMedicoCita(cita_medico: cita_medico) {
     return this.http.post(`${this.API_URI}/cita_medico`, cita_medico);

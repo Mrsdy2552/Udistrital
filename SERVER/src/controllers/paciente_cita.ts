@@ -20,11 +20,20 @@ class paciente_cita {
     //     res.status(404).json({ text: "The game doesn't exits" });
     // }
 
+    // public async create(req: Request, res: Response): Promise<void> {
+    //     const result = await pool.query('INSERT INTO paciente_cita set ?', [req.body]);
+    //     // console.log(req.body);
+    //     res.json({ message: 'paciente_cita Guardado' });
+    // }
+
+
     public async create(req: Request, res: Response): Promise<void> {
         const result = await pool.query('INSERT INTO paciente_cita set ?', [req.body]);
         // console.log(req.body);
-        res.json({ message: 'paciente_cita Guardado' });
+        res.json({ message: 'paciente Guardado' });
     }
+
+
 
     public async update(req: Request, res: Response): Promise<void> {
         const { identificacion_pac } = req.params;
