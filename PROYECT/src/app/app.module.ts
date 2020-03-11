@@ -10,7 +10,7 @@ import { MaterialModule } from './material.componet';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { MENUComponent } from './COMPONENTE/menu/menu.component';
 import { PacientesComponent } from './COMPONENTE/pacientes/pacientes.component';
 import { ListaPacientesComponent } from './COMPONENTE/pacientes/lista-pacientes/lista-pacientes.component';
@@ -44,7 +44,8 @@ import { LoginComponent } from './COMPONENTE/login/login.component';
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

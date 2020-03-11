@@ -1,4 +1,103 @@
- 
-<p>
-  historia-clinica works!
-</p>
+<mat-card>
+
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="material-icons">
+          airline_seat_flat_angled
+        </i>
+        HISTORIA CLINICA
+
+
+      </ng-template>
+      <mat-card> 
+
+      <form class="form_historia">
+      
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Long Last Name That Will Be Truncated</mat-label>
+            <input matInput>
+          </mat-form-field></td>
+        </tr></table>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+        </td>
+      
+        <p>
+          <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Address 2</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </p>
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Ex. San Francisco">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>State</mat-label>
+            <input matInput placeholder="Ex. California">
+          </mat-form-field></td>
+          
+        </tr></table>
+      </form>
+
+
+
+ </mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    </mat-tab>
+    
+    <mat-tab>
+      <ng-template mat-tab-label> 
+        <i class="material-icons">
+          enhanced_encryption
+        </i>
+        DIAGNOSTICOS Y MEDICAMENTOS
+      </ng-template>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eaque voluptas aperiam natus ea explicabo doloribus enim, incidunt sapiente eveniet, minus officiis voluptate, dignissimos sint dolores nostrum architecto. Deserunt, quaerat.
+    </mat-tab>
+    
+    
+  </mat-tab-group>
+</mat-card>
+  

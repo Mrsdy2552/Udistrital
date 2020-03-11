@@ -18,7 +18,8 @@ import {
     MatNativeDateModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
     
     
     
@@ -42,7 +43,8 @@ import {
         MatTableModule,
         HttpClientModule,
         MatPaginatorModule,
-        MatDialogModule
+        MatDialogModule,
+        MatTabsModule
         
     ],
     exports:[
@@ -62,7 +64,8 @@ import {
         MatTableModule,
         HttpClientModule,
         MatPaginatorModule,
-        MatDialogModule 
+        MatDialogModule ,
+        MatTabsModule
 
     ]
 })
